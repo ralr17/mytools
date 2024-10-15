@@ -17,7 +17,7 @@ qscatter <- function(data,x,y){
   r <- cor.test(data[[xname]], data[[yname]])
   gtitle <- paste("Relationship between", xname, "and", yname)
   stitle <- paste("r =", round(r$estimate,3), ", p <", format.pval(r$p.val, 3))
-  ggplot(data, mapping = aes(x = {{x}}, y = {{y}})) + geom_point() + geom_smooth(method = "lm" , formula = y ~ x, se = FALSE, linetype = "dashed", color = "grey") + theme_minimal() + labs(title = gtitle, subtitle = stitle)
+  ggplot(data, mapping = aes(x = {{x}}, y = {{y}})) + geom_point() + geom_smooth(method = "lm" , formula = y ~ x, se = FALSE, linetype = "dashed", color = "cornflowerblue") + theme_minimal() + labs(title = gtitle, subtitle = stitle)
 }
 qscatter(mtcars, wt, hp)
 
